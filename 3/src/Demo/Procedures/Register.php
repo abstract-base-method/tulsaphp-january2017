@@ -36,7 +36,8 @@ class Register implements \Demo\iFace\Register
             } else {
                 return false;
             }
-        } else {
+        }
+        else {
             $PDO = new \PDO("sqlite:mydb.sqlite");
             $Query = "
             INSERT INTO
