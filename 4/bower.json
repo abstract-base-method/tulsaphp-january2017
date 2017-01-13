@@ -1,0 +1,22 @@
+{
+  "name": "lemoney-php",
+  "homepage": "https://github.com/lemoney/lemoney-php",
+  "authors": [
+    "James Bell <github@travelerbell.net>"
+  ],
+  "description": "PHP MVC Framework",
+  "main": "",
+  "license": "Apache 2.0",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/plugins/bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6"
+  }
+}

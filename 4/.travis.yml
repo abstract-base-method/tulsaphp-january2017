@@ -1,0 +1,16 @@
+language: php
+
+sudo: required
+
+php:
+  - '7.0'
+  - '7.1'
+  - nightly
+  - hhvm
+
+matrix:
+  allow_failures:
+    - php: hhvm
+
+before_script:
+  - composer install

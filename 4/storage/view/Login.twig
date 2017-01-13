@@ -1,0 +1,28 @@
+{% include 'Navbar.twig' %}
+<div class="container-fluid">
+    <div class="jumbotron">
+        <h1>Welcome to {{ Application }}</h1>
+        {% if LoginError %}
+            <div class="alert alert-warning">
+                <h5><strong>Login Failed: {{ LoginError }}</strong></h5>
+            </div>
+        {% endif %}
+        <p>Please login to continue</p>
+        <div class="container">
+            <form action="/" method="post">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+                <div class="input-group">
+                    <span class="input-group-addon" id="username"><span classs="glyphicon glyphicon-user"></span></span>
+                    <input type="text" class="form-control" name="username" placeholder="username" aria-describedby="username">
+                </div>
+                <br>
+                <div class="input-group">
+                    <span class="input-group-addon" id="password"><span classs="glyphicon glyphicon-lock"></span></span>
+                    <input type="password" class="form-control" name="password" placeholder="password" aria-describedby="password">
+                </div>
+                <br>
+                <input type="submit" value="login" class="btn btn-primary">
+            </form>
+        </div>
+    </div>
+</div>

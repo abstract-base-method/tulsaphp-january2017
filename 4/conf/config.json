@@ -1,0 +1,55 @@
+{
+    "Application": "lemoney-php",
+    "SupportLink": "github@travelerbell.net",
+    "Environment": "production",
+    "AvailableEnvironment": [
+        "production",
+        "development"
+    ],
+    "Database": {
+        "Enabled": false,
+        "Servers": {
+            "Primary": ""
+        }
+    },
+    "Logging": {
+        "Enabled": true,
+        "Filesystem": true,
+        "SNMP": {
+            "Enabled": false,
+            "Host": "",
+            "Port": ""
+        },
+        "Email": {
+            "Enabled": false,
+            "Host": "",
+            "Port": "",
+            "Username": "",
+            "Password": "",
+            "SenderAddress": "",
+            "LoggingAddress": ""
+        }
+    },
+    "Authentication": {
+        "Enabled": "off",
+        "LDAP": {
+            "Server": "",
+            "DN": "",
+            "Tree": "",
+            "ADSearchString": "(sAMAccountName=%Username%)"
+        },
+        "Faker": {
+            "Username": "Demo",
+            "Password": "Demo"
+        }
+    },
+    "CSRFExcludePaths": [
+        "assets"
+    ],
+    "AuthenticationExcludePaths": [
+        "assets"
+    ],
+    "User": {
+        "Message": "Welcome to the framework"
+    }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "lemoney/lemoney-php",
+  "description": "Open Source Simple to use PHP Framework",
+  "minimum-stability": "stable",
+  "license": "Apache 2.0",
+  "type": "project",
+  "authors": [
+    {
+      "name": "James Bell",
+      "email": "github@travelerbell.net"
+    }
+  ],
+  "config": {
+    "vendor-dir": "src/vendor"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/App/",
+      "Lemoney\\": "src/Lemoney"
+    }
+  },
+  "require": {
+    "monolog/monolog": "1.*",
+    "twig/twig": "v1.*",
+    "phpmailer/phpmailer": "5.2.*"
+  },
+  "suggest": {
+    "guzzlehttp/guzzle": "Allow HTTP requests to be sent externally"
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "sudo chmod +x lemoney",
+      "sudo ln -s ${PWD}/lemoney /usr/local/bin/lemoney",
+      "echo \"<?php declare(strict_types = 1); define('LEMONEY_INSTALL_PATH', '\"${PWD}\"');\" | tee conf/path.php > /dev/null"
+    ]
+  }
+}
