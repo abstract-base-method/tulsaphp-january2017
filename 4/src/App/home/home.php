@@ -10,6 +10,7 @@ declare(strict_types = 1);
 namespace App\home;
 
 
+use App\home\Model\DemoForm;
 use Lemoney\iFace\Router;
 use Lemoney\Kernel;
 use Lemoney\Services\Middleware\CLI;
@@ -40,7 +41,21 @@ class home implements Router
             }
         }
         else {
-            $this->Kernel->View("Welcome.twig");
+            $Model = new DemoForm($this->Kernel->DatabaseString('Primary'), $this->Kernel);
+            if ($Model->Post_Request()) {
+                if ($Model->Process_Email()) {
+                    $this->Kernel->View('demo|success.twig');
+                }
+                else {
+                    $this->Kernel->View('demo|error.twig', ['Error' => 'Error In The System']);
+                }
+            }
+            elseif ($Model->Session_Request()) {
+                $this->Kernel->View('demo|registered.twig');
+            }
+            else {
+                $Model->Unknown_User();
+            }
         }
     }
 

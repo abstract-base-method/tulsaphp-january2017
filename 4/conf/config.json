@@ -1,5 +1,5 @@
 {
-    "Application": "lemoney-php",
+    "Application": "DemoApp",
     "SupportLink": "github@travelerbell.net",
     "Environment": "production",
     "AvailableEnvironment": [
@@ -7,9 +7,9 @@
         "development"
     ],
     "Database": {
-        "Enabled": false,
+        "Enabled": true,
         "Servers": {
-            "Primary": ""
+            "Primary": "sqlite:mydb.sqlite"
         }
     },
     "Logging": {

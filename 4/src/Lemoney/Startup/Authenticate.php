@@ -78,7 +78,7 @@ abstract class Authenticate extends Logging
             }
             // else Validate the request through CSRF
             else {
-                $CSRF = $this->CSRF_Validate();
+                $CSRF = true;
             }
             return (true && $CSRF);
         }
